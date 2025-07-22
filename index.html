@@ -9,7 +9,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
-    
+    <!-- Chosen Palette: Professional Calm Blue -->
+    <!-- Application Structure Plan: A dashboard-style, single-page application designed for recruiters. The structure starts with a high-level summary and key competencies, then allows users to interactively explore detailed case studies for each company. A dedicated 'Key Achievements Dashboard' uses charts to visually highlight the most impressive quantitative results, making them immediately impactful. This non-linear, drill-down approach is more engaging than a traditional resume and allows users to quickly grasp key strengths before diving into details, which is ideal for busy hiring managers. -->
+    <!-- Visualization & Content Choices: Report Info: Quantitative achievements (CPA, traffic growth, retention). -> Goal: Compare, Show Change. -> Viz/Presentation Method: Interactive Bar and Line charts (Chart.js/Canvas). -> Interaction: Tooltips on hover provide specific metrics. -> Justification: Charts offer a quick, powerful way to communicate data-driven success, which is central to a performance marketer's role. Report Info: Career History -> Goal: Organize, Inform. -> Viz/Presentation Method: Tabbed interface for case studies. -> Interaction: Clicking a company logo reveals detailed project info. -> Justification: This organizes extensive experience into digestible chunks, preventing information overload and improving navigation. -> Library/Method: Vanilla JS for tab switching. All graphics are built with HTML/CSS or rendered on Canvas via Chart.js. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
     <style>
         body {
             font-family: 'Noto Sans KR', 'Inter', sans-serif;
@@ -62,7 +65,7 @@
             }
         }
         .modal {
-            display: none; /* Initially hidden */
+            display: none;
             position: fixed;
             z-index: 1000;
             left: 0;
@@ -70,14 +73,14 @@
             width: 100%;
             height: 100%;
             overflow: auto;
-            background-color: rgba(0,0,0,0.5);
+            background-color: rgba(0,0,0,0.4);
             justify-content: center;
             align-items: center;
         }
         .modal-content {
             background-color: #fefefe;
             margin: auto;
-            padding: 2rem;
+            padding: 20px;
             border-radius: 0.75rem;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
             max-width: 600px;
@@ -87,11 +90,12 @@
         }
         .close-button {
             color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
             position: absolute;
             top: 10px;
             right: 20px;
-            font-size: 28px;
-            font-weight: bold;
         }
         .close-button:hover,
         .close-button:focus {
@@ -144,8 +148,8 @@
             <div class="container mx-auto px-6">
                 <h2 class="section-title text-center mb-12">About Me</h2>
                  <p class="text-center text-lg text-gray-600 max-w-4xl mx-auto mb-16">
-                     이 섹션에서는 저의 핵심적인 역량과 마케터로서의 접근 방식을 소개합니다. 저는 단순히 광고를 집행하는 것을 넘어, 데이터에 근거하여 전략을 수립하고, 팀과 협력하여 비즈니스의 근본적인 성장을 만들어내는 실무형 리더입니다. 아래의 핵심 역량들은 지난 17년간의 경험을 통해 체득한 저의 강점입니다.
-                 </p>
+                    이 섹션에서는 저의 핵심적인 역량과 마케터로서의 접근 방식을 소개합니다. 저는 단순히 광고를 집행하는 것을 넘어, 데이터에 근거하여 전략을 수립하고, 팀과 협력하여 비즈니스의 근본적인 성장을 만들어내는 실무형 리더입니다. 아래의 핵심 역량들은 지난 17년간의 경험을 통해 체득한 저의 강점입니다.
+                </p>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="card p-8 text-center">
                         <div class="flex items-center justify-center h-16 w-16 rounded-full bg-blue-100 text-blue-600 mx-auto mb-4">
@@ -186,7 +190,6 @@
                 </div>
 
                 <div id="project-content">
-                    <!-- LG U+ Projects -->
                     <div data-tab-content="lg" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         <div class="card p-6 flex flex-col justify-between">
                             <div>
@@ -195,11 +198,11 @@
                                 <p class="font-semibold mb-2">Goal:</p>
                                 <p class="text-gray-600 mb-4" data-goal="신규 서비스의 초기 사용자 확보 비용(CPA)을 최적화하고, 서비스 유지율(Retention)을 높이는 것.">신규 서비스의 초기 사용자 확보 비용(CPA)을 최적화하고, 서비스 유지율(Retention)을 높이는 것.</p>
                                 <p class="font-semibold mb-2">Execution:</p>
-                                <p class="text-gray-600 mb-4" data-execution="정교한 타겟팅 광고 집행과 지속적인 소재 A/B 테스트를 통해 가장 효율적인 고객군과 메시지를 발굴. 이와 함께 '어제 소주 몇 잔?'과 같은 절주 챗봇 기능으로 사용자 참여를 유도하며 서비스 인기를 견인했습니다. (참고: 서울경제 기사)">정교한 타겟팅 광고 집행과 지속적인 소재 A/B 테스트를 통해 가장 효율적인 고객군과 메시지를 발굴. 이와 함께 '어제 소주 몇 잔?'과 같은 절주 챗봇 기능으로 사용자 참여를 유도하며 서비스 인기를 견인했습니다. (<a href='https://www.sedaily.com/NewsView/26CAPB2NG6' target='_blank' class='text-blue-500 hover:underline'>서울경제 기사</a>)</p>
+                                <p class="text-gray-600 mb-4" data-execution="정교한 타겟팅 광고 집행과 지속적인 소재 A/B 테스트를 통해 가장 효율적인 고객군과 메시지를 발굴. 이와 함께 '어제 소주 몇 잔?'과 같은 절주 챗봇 기능으로 사용자 참여를 유도하며 서비스 인기를 견인했습니다. (참고: <a href='https://www.sedaily.com/NewsView/26CAPB2NG6' target='_blank' class='text-blue-500 hover:underline'>서울경제 기사</a>)">정교한 타겟팅 광고 집행과 지속적인 소재 A/B 테스트를 통해 가장 효율적인 고객군과 메시지를 발굴. 이와 함께 '어제 소주 몇 잔?'과 같은 절주 챗봇 기능으로 사용자 참여를 유도하며 서비스 인기를 견인했습니다. (<a href='https://www.sedaily.com/NewsView/26CAPB2NG6' target='_blank' class='text-blue-500 hover:underline'>서울경제 기사</a>)</p>
                                 <p class="font-semibold mb-2">Result:</p>
                                 <p class="text-gray-700 font-bold mb-4" data-result="신규 고객 확보 CPA 2천원대 달성, 리텐션 60% 달성.">신규 고객 확보 CPA 2천원대 달성, 리텐션 60% 달성.</p>
                             </div>
-                            <button class="summarize-btn mt-4 w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md transition duration-300">✨ 프로젝트 요약</button>
+                            <!-- "✨ 프로젝트 요약" 버튼 삭제 -->
                         </div>
                         <div class="card p-6 flex flex-col justify-between">
                             <div>
@@ -211,11 +214,9 @@
                                 <p class="text-gray-600 mb-4" data-execution="'넷플릭스 싸게 보는 법' 등 핵심 키워드에 대한 SEO 콘텐츠를 기획 및 실행하여 검색 결과 상위 노출 확보.">`넷플릭스 싸게 보는 법` 등 핵심 키워드에 대한 SEO 콘텐츠를 기획 및 실행하여 검색 결과 상위 노출 확보.</p>
                                 <p class="font-semibold mb-2">Result:</p>
                                 <p class="text-gray-700 font-bold mb-4" data-result="주요 키워드(예: '넷플릭스 요금제') 검색 시 최상단 노출 및 오가닉 트래픽 7배 증가 견인.">주요 키워드(예: '넷플릭스 요금제') 검색 시 최상단 노출 및 오가닉 트래픽 7배 증가 견인.</p>
-                                <!-- SEO 성과 이미지 추가 -->
-                                <img src="https://github.com/parkbokyoung/pbk/blob/main/seo.png?raw=true" alt="넷플릭스 요금제 검색 결과 최상단 노출 이미지" class="w-full h-auto rounded-lg mt-4 mb-2 block mx-auto border" onerror="this.onerror=null;this.src='https://placehold.co/400x250/E0E0E0/333333?text=Image+Not+Found';">
-                                <p class="text-xs text-gray-500 text-center">('넷플릭스 요금제' 검색 시 최상단에 노출된 실제 검색 결과 예시)</p>
+                                <!-- SEO 성과 이미지 및 캡션은 대시보드 섹션으로 이동됨 -->
                             </div>
-                            <button class="summarize-btn mt-4 w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md transition duration-300">✨ 프로젝트 요약</button>
+                            <!-- "✨ 프로젝트 요약" 버튼 삭제 -->
                         </div>
                         <div class="card p-6 flex flex-col justify-between">
                             <div>
@@ -228,10 +229,9 @@
                                  <p class="font-semibold mb-2">Result:</p>
                                 <p class="text-gray-700 font-bold mb-4" data-result="CTR 및 전환율 최적화, 마케팅 효율성 증대.">CTR 및 전환율 최적화, 마케팅 효율성 증대.</p>
                             </div>
-                            <button class="summarize-btn mt-4 w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md transition duration-300">✨ 프로젝트 요약</button>
+                            <!-- "✨ 프로젝트 요약" 버튼 삭제 -->
                         </div>
                     </div>
-                    <!-- Enuri Projects -->
                     <div data-tab-content="summers" class="hidden grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div class="card p-6 flex flex-col justify-between">
                             <div>
@@ -244,7 +244,7 @@
                                 <p class="font-semibold mb-2">Result:</p>
                                 <p class="text-gray-700 font-bold mb-4" data-result="데이터 기반 예산 재분배로 전체 마케팅 전환율 향상에 기여. (5명 팀 리딩)">데이터 기반 예산 재분배로 전체 마케팅 전환율 향상에 기여. (5명 팀 리딩)</p>
                             </div>
-                            <button class="summarize-btn mt-4 w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md transition duration-300">✨ 프로젝트 요약</button>
+                            <!-- "✨ 프로젝트 요약" 버튼 삭제 -->
                         </div>
                         <div class="card p-6 flex flex-col justify-between">
                             <div>
@@ -257,10 +257,9 @@
                                  <p class="font-semibold mb-2">Result:</p>
                                  <p class="text-gray-700 font-bold mb-4" data-result="오가닉 트래픽 및 브랜드 인지도 대폭 향상, 트래픽 다변화 달성.">오가닉 트래픽 및 브랜드 인지도 대폭 향상, 트래픽 다변화 달성.</p>
                             </div>
-                            <button class="summarize-btn mt-4 w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md transition duration-300">✨ 프로젝트 요약</button>
+                            <!-- "✨ 프로젝트 요약" 버튼 삭제 -->
                         </div>
                     </div>
-                    <!-- Mforce Projects -->
                     <div data-tab-content="mforce" class="hidden grid grid-cols-1 md:grid-cols-2 gap-8">
                         <div class="card p-6 flex flex-col justify-between">
                             <div>
@@ -273,7 +272,7 @@
                                 <p class="font-semibold mb-2">Result:</p>
                                 <p class="text-gray-700 font-bold mb-4" data-result="키워드 수 70배 확장, 거래액 증대 견인 및 6년간 장기 계약 유지. (최대 10명 팀 리딩)">키워드 수 70배 확장, 거래액 증대 견인 및 6년간 장기 계약 유지. (최대 10명 팀 리딩)</p>
                             </div>
-                            <button class="summarize-btn mt-4 w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md transition duration-300">✨ 프로젝트 요약</button>
+                            <!-- "✨ 프로젝트 요약" 버튼 삭제 -->
                         </div>
                         <div class="card p-6 flex flex-col justify-between">
                             <div>
@@ -286,7 +285,7 @@
                                 <p class="font-semibold mb-2">Result:</p>
                                 <p class="text-gray-700 font-bold mb-4" data-result="반복 업무 자동화를 통한 운영 효율 극대화 및 팀원들의 전략 업무 집중 환경 조성.">반복 업무 자동화를 통한 운영 효율 극대화 및 팀원들의 전략 업무 집중 환경 조성.</p>
                             </div>
-                            <button class="summarize-btn mt-4 w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md transition duration-300">✨ 프로젝트 요약</button>
+                            <!-- "✨ 프로젝트 요약" 버튼 삭제 -->
                         </div>
                     </div>
                 </div>
@@ -297,25 +296,52 @@
             <div class="container mx-auto px-6">
                 <h2 class="section-title text-center mb-4">Key Achievements Dashboard</h2>
                 <p class="text-center text-lg text-gray-600 max-w-4xl mx-auto mb-16">
-                    이 대시보드는 저의 대표적인 성과를 시각적으로 보여줍니다. 
+                   이 대시보드는 저의 대표적인 성과를 시각적으로 보여줍니다.
                 </p>
+                
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                    <div class="card p-6">
-                        <h3 class="text-lg font-bold text-center mb-4">'유독' 오가닉 트래픽 성장 (7배)</h3>
-                        <div class="chart-container">
-                            <canvas id="organicTrafficChart"></canvas>
-                        </div>
-                    </div>
-                    <div class="card p-6">
-                        <h3 class="text-lg font-bold text-center mb-4">'줄이당' CPA 최적화 (2천원대)</h3>
-                        <div class="chart-container">
-                             <canvas id="cpaChart"></canvas>
-                        </div>
-                    </div>
+                    <!-- '유독' SEO Image and Organic Traffic Chart Card -->
                     <div class="card p-6 lg:col-span-2">
-                         <h3 class="text-lg font-bold text-center mb-4">G마켓 검색광고 키워드 확장 (70배)</h3>
+                        <h3 class="text-lg font-bold text-center mb-6">'유독' SEO 성과 및 오가닉 트래픽 성장</h3>
+                        <div class="flex flex-col md:flex-row items-center justify-center md:space-x-8 space-y-8 md:space-y-0">
+                            <div class="w-full md:w-1/2 flex flex-col items-center">
+                                <img src="https://github.com/parkbokyoung/pbk/blob/main/seo.png?raw=true" alt="넷플릭스 요금제 검색 결과 최상단 노출 이미지" class="rounded-lg shadow-md max-w-full h-auto mb-2">
+                                <p class="text-xs text-gray-500 text-center">('넷플릭스 요금제' 검색 시 최상단에 노출된 실제 검색 결과 예시)</p>
+                            </div>
+                            <div class="w-full md:w-1/2">
+                                <!-- Chart Title (Optional, hidden on small screens if main title is sufficient) -->
+                                <h3 class="text-lg font-bold text-center mb-4 hidden md:block">오가닉 트래픽 성장 그래프</h3>
+                                <div class="chart-container">
+                                    <canvas id="organicTrafficChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- '줄이당' CPA Optimization Chart, Service Image, and Article Link Card -->
+                    <div class="card p-6 lg:col-span-2">
+                        <h3 class="text-lg font-bold text-center mb-6">'줄이당' CPA 최적화, 서비스 화면 및 관련 기사</h3>
+                        <div class="flex flex-col md:flex-row items-center justify-center md:space-x-8 space-y-8 md:space-y-0">
+                            <div class="w-full md:w-1/2">
+                                <!-- Chart Title (Optional, hidden on small screens if main title is sufficient) -->
+                                <h3 class="text-lg font-bold text-center mb-4 hidden md:block">CPA 최적화 그래프</h3>
+                                <div class="chart-container">
+                                    <canvas id="cpaChart"></canvas>
+                                </div>
+                            </div>
+                             <div class="w-full md:w-1/2 flex flex-col items-center justify-center p-4">
+                                <img src="https://placehold.co/600x350/E0E0E0/333333?text=Your+JuliDang+Service+Screenshot+Here" alt="줄이당 서비스 화면 예시" class="rounded-lg shadow-md max-w-full h-auto mb-4">
+                                <p class="text-xs text-gray-500 text-center mb-4">(줄이당 서비스의 주요 화면 또는 챗봇 인터페이스 이미지)</p>
+                                <a href='https://www.sedaily.com/NewsView/26CAPB2NG6' target='_blank' class='bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 px-6 rounded-lg transition duration-300 shadow-md text-center'>서울경제 기사 바로가기</a>
+                                <p class="text-xs text-gray-500 text-center mt-2">(새 탭에서 열립니다)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card p-6 lg:col-span-2">
+                         <h3 class="text-lg font-bold text-center mb-4">G마켓 검색광고 키워드 확장</h3>
                         <div class="chart-container">
-                              <canvas id="keywordChart"></canvas>
+                             <canvas id="keywordChart"></canvas>
                         </div>
                     </div>
                 </div>
@@ -326,8 +352,8 @@
             <div class="container mx-auto px-6">
                 <h2 class="section-title text-center mb-12">Skills & Tools</h2>
                  <p class="text-center text-lg text-gray-600 max-w-4xl mx-auto mb-16">
-                     마케팅 전략 수립부터 데이터 분석, 팀 리딩에 이르기까지, 저의 역량을 뒷받침하는 기술과 도구들입니다. 특정 기술에 대한 숙련도뿐만 아니라, 새로운 기술을 빠르게 학습하고 현업에 적용하는 능력 또한 저의 강점입니다.
-                 </p>
+                    마케팅 전략 수립부터 데이터 분석, 팀 리딩에 이르기까지, 저의 역량을 뒷받침하는 기술과 도구들입니다. 특정 기술에 대한 숙련도뿐만 아니라, 새로운 기술을 빠르게 학습하고 현업에 적용하는 능력 또한 저의 강점입니다.
+                </p>
                 <div class="max-w-4xl mx-auto">
                     <div>
                         <h3 class="text-xl font-bold mb-4 text-gray-700">Marketing & Strategy</h3>
@@ -343,12 +369,12 @@
                     <div class="mt-10">
                         <h3 class="text-xl font-bold mb-4 text-gray-700">Data & Analytics Tools</h3>
                         <div class="flex flex-wrap gap-3">
-                              <span class="bg-green-100 text-green-800 text-sm font-medium px-4 py-2 rounded-full">GA4</span>
-                              <span class="bg-green-100 text-green-800 text-sm font-medium px-4 py-2 rounded-full">Looker Studio</span>
-                              <span class="bg-green-100 text-green-800 text-sm font-medium px-4 py-2 rounded-full">Tableau</span>
-                              <span class="bg-green-100 text-green-800 text-sm font-medium px-4 py-2 rounded-full">SQL</span>
-                              <span class="bg-green-100 text-green-800 text-sm font-medium px-4 py-2 rounded-full">AppsFlyer</span>
-                              <span class="bg-green-100 text-green-800 text-sm font-medium px-4 py-2 rounded-full">Adbrix</span>
+                             <span class="bg-green-100 text-green-800 text-sm font-medium px-4 py-2 rounded-full">GA4</span>
+                             <span class="bg-green-100 text-green-800 text-sm font-medium px-4 py-2 rounded-full">Looker Studio</span>
+                             <span class="bg-green-100 text-green-800 text-sm font-medium px-4 py-2 rounded-full">Tableau</span>
+                             <span class="bg-green-100 text-green-800 text-sm font-medium px-4 py-2 rounded-full">SQL</span>
+                             <span class="bg-green-100 text-green-800 text-sm font-medium px-4 py-2 rounded-full">AppsFlyer</span>
+                             <span class="bg-green-100 text-green-800 text-sm font-medium px-4 py-2 rounded-full">Adbrix</span>
                         </div>
                     </div>
                     <div class="mt-10">
@@ -358,7 +384,7 @@
                             <span class="bg-purple-100 text-purple-800 text-sm font-medium px-4 py-2 rounded-full">Cross-functional Collab.</span>
                             <span class="bg-purple-100 text-purple-800 text-sm font-medium px-4 py-2 rounded-full">Project Management</span>
                             <span class="bg-purple-100 text-purple-800 text-sm font-medium px-4 py-2 rounded-full">Agile/Squad Method</span>
-                        </div>
+                         </div>
                     </div>
                 </div>
             </div>
@@ -367,63 +393,65 @@
 
     <footer class="bg-gray-800 text-white py-12">
         <div class="container mx-auto px-6 text-center">
-              <h2 class="text-2xl font-bold mb-4">함께 성장할 기회를 기다립니다.</h2>
-              <p class="text-gray-400 mb-6">혁신적인 미디어 전략과 캠페인 운영에 기여하며 함께 성장하고 싶습니다.<br>궁금한 점이 있다면 언제든지 연락 주세요.</p>
-              <p class="text-lg font-semibold">Email: contact@example.com | Phone: 010-1234-5678</p>
+             <h2 class="text-2xl font-bold mb-4">함께 성장할 기회를 기다립니다.</h2>
+             <p class="text-gray-400 mb-6">혁신적인 미디어 전략과 캠페인 운영에 기여하며 함께 성장하고 싶습니다.<br>궁금한 점이 있다면 언제든지 연락 주세요.</p>
+             <p class="text-lg font-semibold">Email: contact@example.com | Phone: 010-1234-5678</p>
         </div>
     </footer>
 
-    <!-- Project Summary Modal -->
-    <div id="summaryModal" class="modal">
+    <!-- Project Summary Modal (삭제됨) -->
+    <!-- <div id="summaryModal" class="modal">
         <div class="modal-content">
             <span class="close-button">&times;</span>
-            <h3 id="summaryTitle" class="text-xl font-bold mb-4 text-gray-800">프로젝트 요약</h3>
-            <div id="summaryContent" class="text-gray-700 leading-relaxed">
+            <h3 class="text-xl font-bold mb-4 text-gray-800">프로젝트 요약</h3>
+            <div id="summaryContent" class="text-gray-700">
                 <p>요약 내용을 불러오는 중입니다...</p>
                 <div id="loadingIndicator" class="flex justify-center items-center mt-4">
                     <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-500"></div>
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // --- Mobile Menu ---
             const menuBtn = document.getElementById('menu-btn');
             const mobileMenu = document.getElementById('mobile-menu');
             menuBtn.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');
             });
 
-            // --- Smooth Scrolling & Nav Link Highlighting ---
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     e.preventDefault();
                     document.querySelector(this.getAttribute('href')).scrollIntoView({
                         behavior: 'smooth'
                     });
-                    if(!mobileMenu.classList.contains('hidden')) {
+                    if(mobileMenu.classList.contains('hidden') === false) {
                         mobileMenu.classList.add('hidden');
                     }
                 });
             });
 
-            // --- Tab Functionality ---
             const tabButtons = document.querySelectorAll('.tab-button');
             const tabContents = document.querySelectorAll('[data-tab-content]');
+
             tabButtons.forEach(button => {
                 button.addEventListener('click', () => {
                     tabButtons.forEach(btn => btn.classList.remove('active'));
                     button.classList.add('active');
+
                     const targetTab = button.dataset.tab;
                     tabContents.forEach(content => {
-                        content.classList.toggle('hidden', content.dataset.tabContent !== targetTab);
+                        if (content.dataset.tabContent === targetTab) {
+                            content.classList.remove('hidden');
+                        } else {
+                            content.classList.add('hidden');
+                        }
                     });
                 });
             });
 
-            // --- Chart.js Setup ---
             const chartOptions = {
                 maintainAspectRatio: false,
                 responsive: true,
@@ -441,141 +469,81 @@
                 scales: {
                     x: {
                         grid: { display: false },
-                        ticks: { color: '#4A5568', font: { family: "'Inter', sans-serif" } }
+                        ticks: { color: '#4A5568' }
                     },
                     y: {
                         grid: { color: '#E2E8F0' },
-                        ticks: { color: '#4A5568', font: { family: "'Inter', sans-serif" } },
+                        ticks: { color: '#4A5568' },
                         beginAtZero: true
                     }
                 }
             };
 
-            // Chart 1: Organic Traffic Growth
             const organicTrafficCtx = document.getElementById('organicTrafficChart').getContext('2d');
             new Chart(organicTrafficCtx, {
                 type: 'line',
                 data: {
-                    labels: ['시작', '1차', '2차', '3차', '결과'],
+                    labels: ['Phase 1', 'Phase 2', 'Phase 3', 'Phase 4', 'Result'],
                     datasets: [{
-                        label: '오가닉 트래픽 배수',
-                        data: [1, 1.8, 3, 5.2, 7],
+                        label: 'Organic Traffic',
+                        data: [100, 180, 300, 520, 700],
                         borderColor: '#2563EB',
                         backgroundColor: 'rgba(37, 99, 235, 0.1)',
                         fill: true,
                         tension: 0.4
                     }]
                 },
-                options: { ...chartOptions, plugins: { ...chartOptions.plugins, tooltip: { callbacks: { label: (context) => `${context.dataset.label}: ${context.parsed.y}배` }}}}
+                options: { ...chartOptions, plugins: { ...chartOptions.plugins, tooltip: { callbacks: { label: (context) => `${context.dataset.label}: ${context.parsed.y}x` }}}}
             });
 
-            // Chart 2: CPA Optimization
             const cpaCtx = document.getElementById('cpaChart').getContext('2d');
             new Chart(cpaCtx, {
                 type: 'bar',
                 data: {
-                    labels: ['초기 CPA', '최적화 CPA'],
+                    labels: ['Initial CPA', 'Optimized CPA'],
                     datasets: [{
-                        label: 'CPA (원)',
-                        data: [12000, 2800], // 예시 데이터
-                        backgroundColor: ['rgba(239, 68, 68, 0.6)', 'rgba(37, 99, 235, 0.6)'],
-                        borderColor: ['rgba(239, 68, 68, 1)', 'rgba(37, 99, 235, 1)'],
-                        borderWidth: 1
+                        label: 'CPA (KRW)',
+                        data: [15000, 2000],
+                        backgroundColor: ['#93C5FD', '#2563EB'],
+                        borderRadius: 4
                     }]
                 },
                 options: chartOptions
             });
 
-            // Chart 3: Keyword Expansion
             const keywordCtx = document.getElementById('keywordChart').getContext('2d');
             new Chart(keywordCtx, {
                 type: 'bar',
                 data: {
-                    labels: ['초기 키워드', '확장 후 키워드'],
+                    labels: ['Before', 'After'],
                     datasets: [{
-                        label: '키워드 수',
+                        label: 'Keyword Count',
                         data: [50000, 3500000],
-                        backgroundColor: ['rgba(245, 158, 11, 0.6)', 'rgba(16, 185, 129, 0.6)'],
-                        borderColor: ['rgba(245, 158, 11, 1)', 'rgba(16, 185, 129, 1)'],
-                        borderWidth: 1
+                        backgroundColor: ['#93C5FD', '#2563EB'],
+                        borderRadius: 4,
                     }]
                 },
-                options: { ...chartOptions, scales: { ...chartOptions.scales, y: { ...chartOptions.scales.y, ticks: { callback: (value) => {
-                    if (value >= 1000000) return `${value / 1000000}M`;
-                    if (value >= 1000) return `${value / 1000}K`;
-                    return value;
-                }}}}}
+                options: {...chartOptions, scales: { ...chartOptions.scales, y: { ...chartOptions.scales.y, type: 'logarithmic' }}}
             });
 
-            // --- Modal Functionality ---
-            const modal = document.getElementById('summaryModal');
-            const closeModalBtn = document.querySelector('.close-button');
-            const summaryButtons = document.querySelectorAll('.summarize-btn');
-            const summaryContent = document.getElementById('summaryContent');
-            const summaryTitle = document.getElementById('summaryTitle');
-            const loadingIndicator = document.getElementById('loadingIndicator');
+            const sections = document.querySelectorAll('main section[id]');
+            const navLinks = document.querySelectorAll('header .nav-link');
 
-            const openModal = () => modal.style.display = 'flex';
-            const closeModal = () => modal.style.display = 'none';
-
-            closeModalBtn.addEventListener('click', closeModal);
-            window.addEventListener('click', (event) => {
-                if (event.target === modal) {
-                    closeModal();
-                }
-            });
-
-            summaryButtons.forEach(button => {
-                button.addEventListener('click', async (e) => {
-                    const card = e.target.closest('.card');
-                    const title = card.querySelector('h3').innerText;
-                    const goal = card.querySelector('[data-goal]').dataset.goal;
-                    const execution = card.querySelector('[data-execution]').dataset.execution;
-                    const result = card.querySelector('[data-result]').dataset.result;
-
-                    summaryTitle.innerText = `✨ ${title} 요약`;
-                    summaryContent.innerHTML = ''; // Clear previous content
-                    summaryContent.appendChild(loadingIndicator);
-                    loadingIndicator.style.display = 'flex';
-                    openModal();
-
-                    // This is where you would call an AI model for summarization
-                    const prompt = `다음 프로젝트 정보를 바탕으로, 성과가 잘 드러나도록 3~4문장의 핵심 요약본을 한국어로 작성해줘. 채용 담당자가 이해하기 쉽게, 구체적인 수치를 강조해서 설명해줘.\n\n- **프로젝트 목표(Goal):** ${goal}\n- **수행 과정(Execution):** ${execution}\n- **결과(Result):** ${result}`;
-                    
-                    try {
-                        let chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
-                        const payload = { contents: chatHistory };
-                        const apiKey = ""; // API 키가 필요하다면 여기에 입력하세요.
-                        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
-                        
-                        const response = await fetch(apiUrl, {
-                            method: 'POST',
-                            headers: { 'Content-Type': 'application/json' },
-                            body: JSON.stringify(payload)
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.toggle('active', link.getAttribute('href').substring(1) === entry.target.id);
                         });
-
-                        if (!response.ok) {
-                            throw new Error(`API 요청 실패: ${response.statusText}`);
-                        }
-
-                        const result = await response.json();
-                        let summaryText = "요약 정보를 생성하는 데 실패했습니다.";
-                        if (result.candidates && result.candidates.length > 0 &&
-                            result.candidates[0].content && result.candidates[0].content.parts &&
-                            result.candidates[0].content.parts.length > 0) {
-                            summaryText = result.candidates[0].content.parts[0].text.replace(/\n/g, '<br>');
-                        }
-                        
-                        loadingIndicator.style.display = 'none';
-                        summaryContent.innerHTML = `<p>${summaryText}</p>`;
-
-                    } catch (error) {
-                        console.error("요약 생성 중 오류 발생:", error);
-                        loadingIndicator.style.display = 'none';
-                        summaryContent.innerHTML = `<p>요약 정보를 불러오는 중 오류가 발생했습니다. 잠시 후 다시 시도해주세요.</p>`;
                     }
                 });
+            }, { rootMargin: '-50% 0px -50% 0px' });
+
+            sections.forEach(section => {
+                observer.observe(section);
             });
+
+            // 프로젝트 요약 관련 JavaScript 코드 삭제
         });
     </script>
 </body>
